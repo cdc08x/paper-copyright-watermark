@@ -7,7 +7,7 @@ and BibTeX of the final paper in an extra page.
 Errata corrige files can be appended as well, optionally.
 
 ### Requirements
-BibTeX files should have already been tidied by bibtool
+BibTeX files should have already been tidied by BibTool
 (https://ctan.org/tex-archive/biblio/bibtex/utils/bibtool)
 and contain one entry (excluding referenced ones). This is
 already done by the `slice-and-dice-my-BibTeX.sh` script.
@@ -15,8 +15,8 @@ You'd better invoke it first on your BibTeX files.
 
 It requires the installation of:
 - LaTeX 2015+ with PDFlatex command (https://www.latex-project.org/),
-- bibtool (https://ctan.org/tex-archive/biblio/bibtex/utils/bibtool),
-- biber tool (http://biblatex-biber.sourceforge.net/), and
+- BibTool (https://ctan.org/tex-archive/biblio/bibtex/utils/bibtool),
+- Biber (http://biblatex-biber.sourceforge.net/), and
 - PDFtk (https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/).
 
 It has been tested on an Ubuntu Linux 16.04 machine and on a Mac OS X Lion.
