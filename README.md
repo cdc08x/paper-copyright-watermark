@@ -15,11 +15,13 @@ You'd better invoke it first on your BibTeX files.
 
 It requires the installation of:
 - LaTeX 2015+ with PDFlatex command (https://www.latex-project.org/),
+- bibtool (https://ctan.org/tex-archive/biblio/bibtex/utils/bibtool),
 - biber tool (http://biblatex-biber.sourceforge.net/), and
 - PDFtk (https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/).
 
 It has been tested on an Ubuntu Linux 16.04 machine and on a Mac OS X Lion.
 
 ### Usage
-To run it, launch `invoke-copyright-adder.sh`.
-You can modify that script to run it with your files.
+To run it, launch `slice-and-dice-my-BibTeX.sh` first (you will see that you need some options – follow the suggestion!) and then `invoke-copyright-adder.sh`.
+The former slices a BibTeX file with (possibly) many entries into single `.bib` files, which are also linted by bibtool.
+The latter creates the watermark on existing pre-prints. You can modify that script to run it with your files.
