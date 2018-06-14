@@ -1,4 +1,4 @@
-# paper-copyright-watermark
+# Paper copyright-watermarking
 ## Adds a watermark on your paper pre-prints with all information needed to refer to the final version.
 
 Given a PDF and the related BibTeX file, automatically generates
