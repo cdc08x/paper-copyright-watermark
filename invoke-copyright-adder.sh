@@ -29,6 +29,7 @@
 BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "${BASE_DIR}"
 
+./add-copyright-marks-on-preprint.sh "bibs/Surnamev-etal-Symp2017.bib" "pre-prints/Surnamev-etal-Symp2017.pdf" "copyright-marked"
 ./add-copyright-marks-on-preprint.sh "bibs/Author-etal-Conf2018.bib" "pre-prints/Author-etal-Conf2018.pdf" "copyright-marked"
 
 exit
