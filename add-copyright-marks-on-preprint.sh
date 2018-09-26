@@ -22,7 +22,7 @@
 ###############################################################
 #
 # Author: Claudio Di Ciccio
-# Version: 14/06/2018
+# Version: 22/09/2018
 #
 # Requires:
 # 1. installation of LaTeX 2015+ with PDFlatex command (https://www.latex-project.org/)
@@ -80,14 +80,15 @@ publisherfield=$(less "$bibtex" | grep -m 1 -i 'publisher *=')
 
 if [ -z "$publisherfield" ]
 then
-  publisher=$(less "$bibtex" | grep -m 1 -Pzoi 'booktitle *='})
+  publisher=$(less "$bibtex" | grep -m 1 -i 'booktitle *=')
+
 #  publisher=$(less "$bibtex" | grep -m 1 -Pzoi 'booktitle *= *{[^}]*}' | head -n 1 | sed -e ':a;N;s/\n//;ba' | sed -e 's/ *booktitle *= *//gi' -e 's/{//g' -e 's/}//g'  -e 's/  */ /g')
   if [ -z "$publisher" ] # It could be a journal
   then
-    publisher="in \citefield{$bibtexkey}{journaltitle}"
+    publisher="in \citefield{$bibtexkey}{journal}"
 #    publisher=$(less "$bibtex" | grep -m 1 -Pzoi 'journal *= *{[^}]*}' | head -n 1 | sed -e ':a;N;s/\n//;ba' | sed -e 's/ *journal *= *//gi' -e 's/{//g' -e 's/}//g'  -e 's/  */ /g')
   else
-    publisher="in \citefield{$bibtexkey}{booktitle}"
+    publisher="in the proceedings of \citefield{$bibtexkey}{booktitle}"
   fi
 else
 #  publisher=$(echo ${publisherfield} | sed -e 's/[ ]*publisher[ ]*=[ ]*{\([^}]*\)},*.*/\1/i' -e 's/^ *//' -e 's/ *$//')
@@ -129,10 +130,14 @@ fi
 
 bibtext=$(less "$bibtex")
 
-bibtex=`basename "$srcbibtex"`
+## Strip backslash before underscore characters from DOIs and URLs
+sed -e '/doi *=/s/\\_/_/g' -i "$bibtex"
+sed -e '/url *=/s/\\_/_/g' -i "$bibtex"
+
 copyrightex=$(cat --<<EOF
 \documentclass[11pt,a4paper,notitlepage,oneside]{article}
 
+\usepackage[margin=21mm]{geometry}
 \usepackage[colorlinks=true,allcolors=blue]{hyperref}
 \usepackage[utf8]{inputenc}    % utf8 support
 \usepackage[T1]{fontenc}       % code for pdf file
@@ -165,7 +170,9 @@ copyrightex=$(cat --<<EOF
 
 \begin{framed}
 \begin{center}
-This document is a pre-print copy of the manuscript \newline \autocite{$bibtexkey}
+This document is a pre-print copy of the manuscript
+
+\autocite{$bibtexkey}
 
 published ${publisher}.
 

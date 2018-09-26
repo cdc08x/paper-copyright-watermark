@@ -3,7 +3,6 @@ print.use.tab = off
 suppress.initial.newline = on
 crossref.limit = 1
 delete.field = {comment}
-delete.field = {editor}
 delete.field = {note}
 delete.field = {month}
 delete.field = {eprint}
