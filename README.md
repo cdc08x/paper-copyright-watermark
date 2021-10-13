@@ -7,7 +7,7 @@ and BibTeX of the final paper in an extra page.
 Errata corrige files can be appended as well, optionally.
 
 
-All pre- and post-prints on my website ([`diciccio.net`](https://diciccio.net/)) are watermarked with this toolkit.
+All pre- and post-prints on my website ([`diciccio.net`](https://diciccio.net/#cdc08x-pubs)) are watermarked with this toolkit.
 Curious? Keep on reading!
 
 ### Requirements
