@@ -6,6 +6,10 @@ a new PDF file with watermark explaining that it is a pre-print version of the p
 and BibTeX of the final paper in an extra page.
 Errata corrige files can be appended as well, optionally.
 
+
+All pre- and post-prints on my website ([`diciccio.net`](https://diciccio.net/)) are watermarked with this toolkit.
+Curious? Keep on reading!
+
 ### Requirements
 BibTeX files should have already been tidied by BibTool
 (https://ctan.org/tex-archive/biblio/bibtex/utils/bibtool)
@@ -19,7 +23,7 @@ It requires the installation of:
 - Biber (http://biblatex-biber.sourceforge.net/), and
 - PDFtk (https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/).
 
-It has been tested on an Ubuntu Linux 16.04 machine and on a Mac OS X Lion.
+It has been tested on Ubuntu Linux 16.04+ machines and on a Mac OS X Lion computer.
 
 ### Usage
 To run it, launch
