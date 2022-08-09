@@ -86,3 +86,9 @@ The software also relies on an auxiliary folder (`tmp/`) to store temporary data
 TMP_DIR="${BASE_DIR}/tmp"
 ```
 Have fun!
+
+### Alternative Solutions
+
+- The LaTeX package [`lncsconf`](https://www.ctan.org/pkg/llncsconf) supports watermarking with different stages of the paper: intended, submitted, accepted, proceedings
+- The LaTeX package [`authorarchive`](https://github.com/adbrucker/authorarchive) adds a watermark at the bottom of the page and a QR code linking to the electronic full text version. Furthermore, the BibTeX entry is embedded in the PDF to ease addindg the paper to the own bibliography.
+- The LaTeX package [`coverpage`](https://www.ctan.org/pkg/coverpage) adds a page in front of the paper. This might be unintuitive to the reader.
